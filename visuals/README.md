@@ -19,6 +19,11 @@ clean copy of `bench/seed`; its `make_server()` was started on a random port;
 four synthetic tasks were created via the API; Firefox headless took the
 screenshot. They show the **submitted UI**, not a live model session.
 
+**Aesthetic note:** these screenshots are not a design score. In this sample
+`dsh-ds` looks more polished (cards, spacing, badges), but the hidden tests only
+check function. Visual style is a model/harness choice, not a provider-quality
+metric.
+
 The functional evidence is the hidden test suite (`13/13` in every cell):
 CRUD, validation, pagination, SQL injection, concurrency, persistence and
 frontend markers.

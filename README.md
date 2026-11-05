@@ -86,6 +86,10 @@ All four identified the NE555 astable, `686 Hz`, `52.4 %` duty and the
 The sessions were headless: there is no screen recording. These images are
 reconstructions from the submitted code and the aggregate results.
 
+Aesthetics were **not** scored. In the webapp captures `dsh-ds` looks more
+polished, but the hidden tests only check function; visual style is not a
+provider-quality metric.
+
 **Webapp UIs** (same four synthetic tasks, each cell's submitted frontend):
 
 ![Webapp UIs](visuals/webapp-montage.png)
