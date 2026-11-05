@@ -1,0 +1,18 @@
+# Outer-sandbox overlay for benchmark runs.
+#
+# The benchmark process itself runs inside bubblewrap, which hides the real
+# vault, the harness files, the other cells and the real DSH/OpenCode stores.
+# DSH's own inner sandbox is therefore set to danger-full-access: the outer
+# bubblewrap is the write fence, and nested sandboxes would only add failure
+# modes. Do not use this overlay outside the wrapped benchmark runner.
+- id: permission
+  name: '@deepseek-ai/dsh-permission-presets'
+  config:
+    defaultPreset: danger-full-access
+    presets:
+      danger-full-access:
+        approval: never
+        sandbox: danger-full-access
+      read-only:
+        approval: ask
+        sandbox: read-only

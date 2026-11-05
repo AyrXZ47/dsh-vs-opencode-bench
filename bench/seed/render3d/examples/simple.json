@@ -1,0 +1,15 @@
+{
+  "width": 64,
+  "height": 48,
+  "background": [10, 10, 20],
+  "camera": {
+    "position": [0, 0, 4],
+    "target": [0, 0, 0],
+    "up": [0, 1, 0],
+    "fov_deg": 60
+  },
+  "light": {"direction": [0, 0, -1], "ambient": 0.2, "diffuse": 0.8},
+  "triangles": [
+    {"v0": [-1, -1, 0], "v1": [1, -1, 0], "v2": [0, 1, 0], "color": [200, 40, 40]}
+  ]
+}
