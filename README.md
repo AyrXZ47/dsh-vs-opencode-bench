@@ -81,6 +81,29 @@ not correctness.
 All four identified the NE555 astable, `686 Hz`, `52.4 %` duty and the
 `RESET` tied to `GND` inconsistency.
 
+## Visual evidence
+
+The sessions were headless: there is no screen recording. These images are
+reconstructions from the submitted code and the aggregate results.
+
+**Webapp UIs** (same four synthetic tasks, each cell's submitted frontend):
+
+![Webapp UIs](visuals/webapp-montage.png)
+
+**3D renderer** (same octahedron scene, each cell's submitted renderer; identical
+output is the expected parity):
+
+![3D renders](visuals/render3d-montage.png)
+
+**Score heatmap**:
+
+![Suite 2 scores](visuals/suite2-scores.png)
+
+More: `visuals/suite2-time.png`, `visuals/suite2-cost.png`,
+`visuals/suite1-time.png`, `visuals/suite1-cost.png`,
+`visuals/vision-schematic.png`. See [`visuals/README.md`](visuals/README.md)
+for provenance and reproduction.
+
 ## What this is
 
 - A reproducible **methodology** with tasks, hidden acceptance tests, graders,
@@ -114,6 +137,9 @@ docs/
 results/
   REPORT.md, REPORT2.md, SOURCE-VERIFICATION.md
   aggregate*.json, aggregate*.csv, run-order.txt
+visuals/
+  webapp-*.png, render3d-*.png, suite*-*.png
+  README.md, make_visuals.py
 ```
 
 ## Reproduce
