@@ -1,0 +1,20 @@
+fase1-webapp dsh-ds
+oc-oc
+oc-ds
+dsh-oc
+fase2-render3d dsh-ds
+oc-ds
+oc-oc
+dsh-oc
+fase3-ledger oc-ds
+dsh-oc
+oc-oc
+dsh-ds
+fase4-research oc-oc
+dsh-ds
+dsh-oc
+oc-ds
+fase5-skills oc-ds
+dsh-ds
+oc-oc
+dsh-oc

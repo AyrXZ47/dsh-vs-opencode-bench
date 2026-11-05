@@ -1,0 +1,21 @@
+cell,phase,dir,wall_s,input,output,reasoning,output_total,cache_read,cache_write,cost_nominal,cost_actual,tools,steps,turns,exit,answer_first,pricing
+dsh-ds,fase0-smoke,~/bench-harness/results/dsh-ds/fase0-smoke-20261105-022636,5.7,2886,35,0,35,11392,0,0.000976,,0,1,1,0,OK DSH-DS,direct
+dsh-ds,fase1-codigo,~/bench-harness/results/dsh-ds/fase1-codigo-20261105-022708,62.5,8106,9396,0,9396,282624,0,0.015403,,13,13,1,0,Listo. Cambios solo dentro de `packets/`:,direct
+dsh-ds,fase2-web,~/bench-harness/results/dsh-ds/fase2-web-20261105-023125,355.0,48638,32574,0,32574,2016512,0,0.065779,,56,39,1,0,"**Estado general.** El soporte upstream recomendado para RDNA4 (gfx1200/1201) arranca en Linux 6.12, con Mesa 25.0+ y fi",direct
+dsh-ds,fase3-vision,~/bench-harness/results/dsh-ds/fase3-vision-20261105-025319,102.8,22738,15130,0,15130,252416,0,0.026492,,12,10,1,0,# Fase 3 — NE555,direct
+dsh-ds,fase4-skills,~/bench-harness/results/dsh-ds/fase4-skills-20261105-030011,299.1,80152,46680,0,46680,1238144,0,0.08749,,64,19,1,0,## 1. Nota creada,direct
+dsh-oc,fase0-smoke,~/bench-harness/results/dsh-oc/fase0-smoke-20261105-022642,8.9,14228,78,0,78,0,0,0.002181,,0,1,1,0,OK DSH-OC,oc
+dsh-oc,fase1-codigo,~/bench-harness/results/dsh-oc/fase1-codigo-20261105-022821,77.6,31795,7399,0,7399,129408,0,0.009597,,12,8,1,0,Listo. Cambios únicamente dentro de `packets/`:,oc
+dsh-oc,fase2-web,~/bench-harness/results/dsh-oc/fase2-web-20261105-023740,200.5,87360,16396,0,16396,527616,0,0.024524,,25,14,1,0,**Estado del soporte RDNA4 en Linux (noviembre 2026)**,oc
+dsh-oc,fase3-vision,~/bench-harness/results/dsh-oc/fase3-vision-20261105-025509,107.4,21302,12420,0,12420,235392,0,0.011353,,13,11,1,0,## 1. Qué es y qué hace,oc
+dsh-oc,fase4-skills,~/bench-harness/results/dsh-oc/fase4-skills-20261105-030528,327.1,160208,41010,0,41010,2221952,0,0.055303,,101,33,1,0,Sin commit: los cambios quedaron en el working tree.,oc
+oc-ds,fase0-smoke,~/bench-harness/results/oc-ds/fase0-smoke-20261105-022655,2.7,174,5,0,5,7936,0,0.000106,5.2908e-05,0,1,,0,OK OC-DS,direct
+oc-ds,fase1-codigo,~/bench-harness/results/oc-ds/fase1-codigo-20261105-022947,17.0,4138,2139,956,3095,45312,0,0.005227,0.002613636,5,4,,0,Listo.,direct
+oc-ds,fase2-web,~/bench-harness/results/oc-ds/fase2-web-20261105-024114,240.2,83748,9321,28362,37683,1758464,0,0.080895,0.040447392,25,24,,0,**Scheduler.** En RDNA4 (GFX12) el envío no pasa solo por el ring del kernel: el firmware MES mapea *user queues* —ring ,direct
+oc-ds,fase3-vision,~/bench-harness/results/oc-ds/fase3-vision-20261105-025703,71.8,8990,2071,8715,10786,111872,0,0.016311,0.008155716,9,8,,0,## 1. El circuito,direct
+oc-ds,fase4-skills,~/bench-harness/results/oc-ds/fase4-skills-20261105-031111,279.2,95735,7689,38036,45725,2192896,0,0.096748,0.04837393799999999,78,26,,0,Listo. No hice commit; los cambios siguen en el working tree.,direct
+oc-oc,fase0-smoke,~/bench-harness/results/oc-oc/fase0-smoke-20261105-022657,4.4,47,5,0,5,8064,0,3.4e-05,0.0,0,1,,0,OK OC-OC,oc
+oc-oc,fase1-codigo,~/bench-harness/results/oc-oc/fase1-codigo-20261105-023012,63.5,8724,2486,2486,4972,60544,0,0.004473,0.0,5,5,,0,## Resumen,oc
+oc-oc,fase2-web,~/bench-harness/results/oc-oc/fase2-web-20261105-024524,451.6,129390,6482,25629,32111,1680768,0,0.043717,0.0,22,21,,0,Estado según la documentación de Linux 7.4-rc1 y fuentes hasta noviembre de 2026.,oc
+oc-oc,fase3-vision,~/bench-harness/results/oc-oc/fase3-vision-20261105-025822,92.4,8885,1780,4735,6515,79744,0,0.005481,0.0,9,7,,0,## 1. Análisis del schematic,oc
+oc-oc,fase4-skills,~/bench-harness/results/oc-oc/fase4-skills-20261105-031607,315.6,138915,7414,32625,40039,2207232,0,0.051482,0.0,64,27,,0,## 1. Nota creada,oc
