@@ -258,7 +258,9 @@ Mostrar la tabla de scores. “Webapp 13/13, 3D 10/10, research 1.0 en las cuatr
 
 ## 12. Cross-check externo: Harness Leaderboard (nov 2026)
 
-Este repo aísla el **proveedor** con dos harnesses. El [Harness Leaderboard de
+Este repo aísla el **proveedor** con dos harnesses. La comparación se orquestó
+desde Pi para que el harness bajo prueba no manejara también la evaluación. El
+[Harness Leaderboard de
 Joël Niklaus](https://huggingface.co/spaces/joelniklaus/harness-leaderboard)
 aísla el **harness** con el modelo fijo: mismos pesos, mismo proveedor, mismo
 esfuerzo, tres intentos por tarea e intervalos de confianza del 95%. En v0.1.6

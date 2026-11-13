@@ -83,9 +83,10 @@ All four identified the NE555 astable, `686 Hz`, `52.4 %` duty and the
 
 ## Cross-check: external harness leaderboard (Nov 2026)
 
-This repo isolates the **provider** with two harnesses. A separate public
-benchmark isolates the **harness** with the model fixed, which is the other half
-of the picture. [Joël Niklaus's Harness Leaderboard](https://huggingface.co/spaces/joelniklaus/harness-leaderboard)
+This repo isolates the **provider** with two harnesses. The comparison was
+orchestrated from Pi so the harness under test did not also drive the
+evaluation. A separate public benchmark isolates the **harness** with the model
+fixed, which is the other half of the picture. [Joël Niklaus's Harness Leaderboard](https://huggingface.co/spaces/joelniklaus/harness-leaderboard)
 runs ten coding-agent harnesses on the same open-weight models, same provider,
 same reasoning effort, three attempts per task, with 95% confidence intervals.
 At v0.1.6 (2026-11-13 UTC), across GLM-5.3-Flash, DeepSeek-V4.1-Flash and Flint
