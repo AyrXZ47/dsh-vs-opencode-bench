@@ -81,6 +81,50 @@ not correctness.
 All four identified the NE555 astable, `686 Hz`, `52.4 %` duty and the
 `RESET` tied to `GND` inconsistency.
 
+## Cross-check: external harness leaderboard (Nov 2026)
+
+This repo isolates the **provider** with two harnesses. A separate public
+benchmark isolates the **harness** with the model fixed, which is the other half
+of the picture. [Joël Niklaus's Harness Leaderboard](https://huggingface.co/spaces/joelniklaus/harness-leaderboard)
+runs ten coding-agent harnesses on the same open-weight models, same provider,
+same reasoning effort, three attempts per task, with 95% confidence intervals.
+At v0.1.6 (2026-11-13 UTC), across GLM-5.3-Flash, DeepSeek-V4.1-Flash and Flint
+on Terminal-Bench 2.1 and DeepSWE v1.1:
+
+| Harness | Overall | $ per solved task | Terminal-Bench | DeepSWE |
+|---|---:|---:|---:|---:|
+| OpenCode | **52.0%** | $0.45 | **60.4%** | 43.6% |
+| DSH | 50.4% | $0.53 | 55.8% | **45.1%** |
+| Pi | 48.6% | **$0.29** | 56.3% | 40.9% |
+
+OpenCode, mini-swe-agent, DSH and Kimi Code share the statistical first place;
+OpenCode has the highest raw average. Per model:
+
+| Model | OpenCode | DSH | Pi |
+|---|---:|---:|---:|
+| GLM-5.3-Flash (low + high) | **62.4%** | 60.1% | 62.0% |
+| DeepSeek-V4.1-Flash (low + high) | **70.6%** | 70.5% | 65.8% |
+| Flint | **23.1%** | 20.7% | 18.0% |
+
+Two results matter for this repo:
+
+- On **DeepSeek-V4.1-Flash**, the model used in this 2x2, OpenCode and DSH are
+  statistically tied at 70.6% and 70.5%, while Pi is 65.8%. The provider swap
+  here (OpenCode Go vs DeepSeek direct) moved quality less than the harness
+  choice moves it on the external board.
+- **DSH wins DeepSWE** (45.1%) but is eighth on Terminal-Bench (55.8%) because
+  it shuts down the background services it started when the session ends. The
+  board's author reports 2/36 passes on the three server tasks for DSH versus
+  36/36 for OpenCode. That is a different failure mode from the `dsh-ds`
+  rounding bug in this repo, but the same lesson: the harness, not the model,
+  decides whether the task is complete.
+
+The external board does not contradict the 2x2; it reinforces the reading that
+the OpenCode Go gateway was not the problem. If anything, harness choice moved
+scores more than the provider swap did. Caveats are the same: one operator,
+headless runs, open-weight models only, and overlapping confidence intervals at
+the top. The numbers are a snapshot; the board's changelog moves them.
+
 ## Visual evidence
 
 The sessions were headless: there is no screen recording. These images are
@@ -174,6 +218,7 @@ directories from the agent environment.
 ## Links
 
 - Full Spanish report: [`docs/report-es.md`](docs/report-es.md)
+- External cross-check: [Harness Leaderboard](https://huggingface.co/spaces/joelniklaus/harness-leaderboard)
 - Suite 2 report: [`results/REPORT2.md`](results/REPORT2.md)
 - Suite 1 report: [`results/REPORT.md`](results/REPORT.md)
 - Source verification: [`results/SOURCE-VERIFICATION.md`](results/SOURCE-VERIFICATION.md)

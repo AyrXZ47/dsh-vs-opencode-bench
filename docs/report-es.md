@@ -255,3 +255,44 @@ Mostrar la tabla de scores. “Webapp 13/13, 3D 10/10, research 1.0 en las cuatr
 - El vault real no se tocó durante las pruebas. Esta nota es la primera escritura deliberada en él.
 - La instancia de Obsidian de prueba se cerró al terminar. El dotpm real sigue funcionando.
 - Los tests ocultos y las soluciones de referencia viven fuera del sandbox; los agentes nunca los vieron.
+
+## 12. Cross-check externo: Harness Leaderboard (nov 2026)
+
+Este repo aísla el **proveedor** con dos harnesses. El [Harness Leaderboard de
+Joël Niklaus](https://huggingface.co/spaces/joelniklaus/harness-leaderboard)
+aísla el **harness** con el modelo fijo: mismos pesos, mismo proveedor, mismo
+esfuerzo, tres intentos por tarea e intervalos de confianza del 95%. En v0.1.6
+(13-nov-2026 UTC), sobre GLM-5.3-Flash, DeepSeek-V4.1-Flash y Flint en
+Terminal-Bench 2.1 + DeepSWE v1.1:
+
+| Harness | Global | $/tarea resuelta | Terminal-Bench | DeepSWE |
+|---|---:|---:|---:|---:|
+| OpenCode | **52.0%** | $0.45 | **60.4%** | 43.6% |
+| DSH | 50.4% | $0.53 | 55.8% | **45.1%** |
+| Pi | 48.6% | **$0.29** | 56.3% | 40.9% |
+
+OpenCode, mini-swe-agent, DSH y Kimi Code comparten el primer puesto
+estadístico; OpenCode tiene el promedio más alto. Por modelo:
+
+| Modelo | OpenCode | DSH | Pi |
+|---|---:|---:|---:|
+| GLM-5.3-Flash (low + high) | **62.4%** | 60.1% | 62.0% |
+| DeepSeek-V4.1-Flash (low + high) | **70.6%** | 70.5% | 65.8% |
+| Flint | **23.1%** | 20.7% | 18.0% |
+
+Dos lecturas para este repo:
+
+- En **DeepSeek-V4.1-Flash**, el modelo de este 2×2, OpenCode y DSH empatan
+  arriba (70.6% y 70.5%) y Pi queda en 65.8%. El swap de proveedor de este repo
+  no movió la calidad; en el board externo el harness sí mueve varios puntos.
+- **DSH gana DeepSWE** (45.1%) pero es octavo en Terminal-Bench (55.8%) porque
+  mata los servicios en background al cerrar la sesión. El autor del board
+  reporta 2/36 en las tres tareas de servidor para DSH contra 36/36 de
+  OpenCode. Es otro modo de fallo, pero la misma lección: el harness, no el
+  modelo, decide si la tarea queda terminada.
+
+El board externo no contradice el 2×2; refuerza que el gateway de OpenCode Go
+no era el problema. Si algo, el harness movió más que el proveedor. Límites:
+un solo operador, corridas headless, solo modelos open-weight e intervalos de
+confianza solapados arriba. Los números son un snapshot; el changelog del board
+los mueve.
